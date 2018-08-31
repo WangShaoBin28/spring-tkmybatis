@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/tkmybatis?useSSL=false
+
+mybatis:
+  type-aliases-package: com.app.model
+  mapper-locations: mapper/*.xml
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+logging:
+  level:
+    com.app: debug
+
+
+mapper:
+  mappers: com.app.config.BaseMapper
+  not-empty: false
+  identity: MYSQL
+
+
